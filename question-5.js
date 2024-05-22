@@ -19,3 +19,24 @@ const products = [
 
 const promotionCode = "";
 // เริ่มเขียนโค้ดตรงนี้
+
+let totalPrice = 0;
+
+function calculateTotalPrice(products, promotionCode) {
+  for (let item of products) {
+    //   console.log(item.price)
+    // console.log(item.quantity)
+    totalPrice = totalPrice + item.price * item.quantity;
+  }
+
+  if (promotionCode === "SALE20") {
+    return (totalPrice = totalPrice * 0.8);
+  } else if (promotionCode === "SALE50") {
+    return (totalPrice = totalPrice * 0.5);
+  } else {
+    return totalPrice;
+  }
+}
+console.log(calculateTotalPrice(products, promotionCode));
+
+// ไว้กลับมาลองทำ switch-case
